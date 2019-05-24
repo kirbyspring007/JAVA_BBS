@@ -24,41 +24,40 @@
 				<li><a href="main.jsp">main</a></li>
 				<li><a href="bbs.jsp">掲示板</a></li>
 			</ul>
-	 	<ul class="nav navber-nav navber-right">
+	 	<ul class="nav navnar-nav navbar-right">
 	 		<li class="dropdown">
 	 			<a href="#" class="dropdown-toggle"
-	 				data-toggle="dropdown" role="button" aria-haspopup="ture"
+	 				data-toggle="dropdown" role="button" aria-haspopup="true"
 	 				aria-expanded="false">接続する<span class="caret"></span></a>
 	 			<ul class="dropdown-menu">
-	 				<li class="active"><a href="login.jsp">ログイン</a>></li>
-	 				<li><a href="login.jsp">会員登録</a>></li>
-	 			</ul>
-	 		
-	 		</li>
-	 	</ul>
-	</div>
-</nav>
-	<div class="container">
+	 				<li class="active"><a href="login.jsp">ログイン</a></li>
+	 				<li><a href="join.jsp">会員登録</a></li>
+	 				</ul>
+	 			</li>
+	 		</ul>
+		</div>
+	</nav>
+		<div class="container">
 		<div class="col-lg=4"></div>
-			<div class="col-lg=4">
-				<div class="jumbotron" style="padding-top: 20px;">
-					<form method="post" action="loginAction.jsp">
-						<h3 style="text-align: center;">ログイン画面</h3>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="アイディ" name="userID" maxlength="20">
-							</div>
+		<div class="col-lg=4">
+			<div class="jumbotron" style="padding-top: 20px;">
+				<form method="post" action="loginAction.jsp">
+					<h3 style="text-align: center;">ログイン画面</h3>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="ID" name="userID" maxlength="20">
+					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" placeholder="暗証番号" name="userPassword" maxlength="20">
 					</div>
 					<input type="submit" class="btn btn-promary form-control" value="ログイン">
-					</form>
-				</div>	
-			</div>
-	<div class="col-lg-4"></div>
-	</div>
-
+				</form>
+			</div>	
+		</div>
+		<div class="col-lg-4"></div>
+	 	</div>
 
 <script src="js/bootstrap.js"></script>
-<script src="https://code.jquery.com/jquery.3.1.1.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
