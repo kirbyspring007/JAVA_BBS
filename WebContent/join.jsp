@@ -30,8 +30,8 @@
 	 				data-toggle="dropdown" role="button" aria-haspopup="true"
 	 				aria-expanded="false">接続する<span class="caret"></span></a>
 	 			<ul class="dropdown-menu">
-	 				<li class="active"><a href="login.jsp">ログイン</a></li>
-	 				<li><a href="join.jsp">会員登録</a></li>
+	 				<li><a href="login.jsp">ログイン</a></li>
+	 				<li class="active"><a href="join.jsp">会員登録</a></li>
 	 				</ul>
 	 			</li>
 	 		</ul>
@@ -55,11 +55,11 @@
 					<div class="form-group" style="text-align: center;">
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-primary active">
-								<input type="radio" name="userGender" autocomplete="off" value="男性" checked>男性
+								<input type="radio" name="userGender" autocomplete="off" value="man" checked>男性
 							</label>
 							<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-primary">
-								<input type="radio" name="userGender" autocomplete="off" value="女性" checked>女性
+								<input type="radio" name="userGender" autocomplete="off" value="girl" checked>女性
 								</label>
 							</div>
 						</div>
