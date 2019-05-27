@@ -65,19 +65,24 @@
 	</nav>
 	<div class="container">
 		<div class="row">
+		<form method="post" action="writeAction.sjp">
 			<table class="table table-striped" style="txt-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th style="background-color: #eeeeee; text-align: center;">番号</th>
-						<th style="background-color: #eeeeee; text-align: center;">タイトル</th>
-						<th style="background-color: #eeeeee; text-align: center;">作成者</th>
-						<th style="background-color: #eeeeee; text-align: center;">作成日</th>
+						<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
 					</tr>
 				</thead>
 				<tbody>
+					<tr>
+						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>	
+					</tr>
+					<tr>	
+						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea>
+					</tr>
 				</tbody>
-			</table> 
-			<a href="write.sjp" class="btn btn-primary pull-right">作成</a>
+				</table> 
+			<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+		</form>
 		</div>
 	</div>
 	
