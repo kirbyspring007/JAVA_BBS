@@ -69,19 +69,19 @@
 			<table class="table table-striped" style="txt-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
+						<th colspan="2" style="background-color: #eeeeee; text-align: center;">掲示板様式</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>	
+						<td><input type="text" class="form-control" placeholder="タイトル" name="bbsTitle" maxlength="50"></td>	
 					</tr>
 					<tr>	
-						<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea>
+						<td><textarea class="form-control" placeholder="内容" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea>
 					</tr>
 				</tbody>
 				</table> 
-			<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+			<input type="submit" class="btn btn-primary pull-right" value="掲示">
 		</form>
 		</div>
 	</div>

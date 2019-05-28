@@ -39,7 +39,7 @@ public class BbsDAO {
 	}
 	
 	public int getNext() {
-		String SQL = "SELECT bbsID FROM FROM BBS ORDER BY bbsID DESC";
+		String SQL = "SELECT bbsID FROM BBS ORDER BY bbsID DESC";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			rs = pstmt.executeQuery();
@@ -55,7 +55,7 @@ public class BbsDAO {
 	
 
 	public int write(String bbsTitle, String userID, String bbsContent) {
-		String SQL = "INSERT INTO BBS VALUE(?, ?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO BBS VALUES (?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, getNext());
@@ -64,7 +64,6 @@ public class BbsDAO {
 			pstmt.setString(4, getDate());
 			pstmt.setString(5, bbsContent);
 			pstmt.setInt(6, 1);
-			rs = pstmt.executeQuery();
 			return pstmt.executeUpdate();
 	} catch (Exception e){
 		e.printStackTrace();
