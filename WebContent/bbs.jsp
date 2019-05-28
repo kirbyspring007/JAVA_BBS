@@ -77,7 +77,7 @@
 				<tbody>
 				</tbody>
 			</table> 
-			<a href="write.sjp" class="btn btn-primary pull-right">作成</a>
+			<a href="write.jsp" class="btn btn-primary pull-right">作成</a>
 		</div>
 	</div>
 	

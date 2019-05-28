@@ -25,7 +25,7 @@
 			script.println("location.href = 'login.jsp'");
 			script.println("</script>");
 		} else{
-			if (bbs.getBbsTitle() == null || bbs.getBbsContent == null) {
+			if (bbs.getBbsTitle() == null || bbs.getBbsContent() == null) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('入力されてない項目があります。')");

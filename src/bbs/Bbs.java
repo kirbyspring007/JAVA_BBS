@@ -14,10 +14,10 @@ public class Bbs {
 	public void setBbsID(int bbsID) {
 		this.bbsID = bbsID;
 	}
-	public String getBbsPassword() {
+	public String getBbsTitle() {
 		return bbsTitle;
 	}
-	public void setBbsPassword(String bbsTitle) {
+	public void setBbsTitle(String bbsTitle) {
 		this.bbsTitle = bbsTitle;
 	}
 	public String getUserID() {

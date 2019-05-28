@@ -65,7 +65,7 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-		<form method="post" action="writeAction.sjp">
+		<form method="post" action="writeAction.jsp">
 			<table class="table table-striped" style="txt-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
