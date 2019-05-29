@@ -17,6 +17,13 @@
 		if (session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 		}
+		if (userID == null) {
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert = ('ログインしてください。')");
+			script.println("location.href = 'login.jsp'");
+			script.println("</script>");
+		}
 		int bbsID = 0;
 		if (request.getParameter("bbsID") != null){
 			bbsID = Integer.parseInt(request.getParameter("bbsID"));
@@ -29,6 +36,13 @@
 			script.println("</script>");
 		}
 		Bbs bbs = new BbsDAO().getBbs(bbsID);
+			if(!userID.equals(bbs.getUserID())){
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert = ('権限がないです。')");
+				script.println("location.href = 'bbs.jsp'");
+				script.println("</script>");
+			}
 	%>
 	<nav class="navbar navbar-default">
 	 	<div class="navbar-header">
@@ -45,23 +59,6 @@
 				<li><a href="main.jsp">main</a></li>
 				<li class="active"><a href="bbs.jsp">掲示板</a></li>
 			</ul>
-			<%
-				if(userID == null){
-			%>
-				<ul class="nav navnar-nav navbar-right">
-	 		<li class="dropdown">
-	 			<a href="#" class="dropdown-toggle"
-	 				data-toggle="dropdown" role="button" aria-haspopup="true"
-	 				aria-expanded="false">接続する<span class="caret"></span></a>
-	 			<ul class="dropdown-menu">
-	 				<li><a href="login.jsp">ログイン</a></li>
-	 				<li><a href="join.jsp">会員登録</a></li>
-	 				</ul>
-	 			</li>
-	 		</ul>
-			<%
-				} else {
-			%>
 				<ul class="nav navnar-nav navbar-right">
 			 		<li class="dropdown">
 			 			<a href="#" class="dropdown-toggle"
@@ -72,47 +69,28 @@
 			 				</ul>
 			 			</li>
 			 		</ul>
-			<%
-	 		}
-			 %>
-		</div>
+			</div>
 	</nav>
 	<div class="container">
 		<div class="row">
+		<form method="post" action="updateAction.jsp?bbsID=<%= bbsID %>">
 			<table class="table table-striped" style="txt-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
-						<th colspan="3" style="background-color: #eeeeee; text-align: center;">内容を見る</th>
+						<th colspan="2" style="background-color: #eeeeee; text-align: center;">掲示板修正様式</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td style="width: 20%">タイトル</td>
-						<td colspan="2"><%= bbs.getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+						<td><input type="text" class="form-control" placeholder="タイトル" name="bbsTitle" maxlength="50" value="<%= bbs.getBbsTitle() %>"></td>	
 					</tr>
-					<tr>
-						<td>作成者</td>
-						<td colspan="2"><%= bbs.getUserID() %></td>
-					</tr>
-					<tr>
-						<td>作成日</td>
-						<td colspan="2"><%= bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "時" + bbs.getBbsDate().substring(14, 16) + "分" %></td>
-					</tr>
-					<tr>
-						<td>内容</td>
-						<td colspan="2" style="min-height: 200px; text-align: left;"><%= bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
+					<tr>	
+						<td><textarea class="form-control" placeholder="内容" name="bbsContent" maxlength="2048" style="height: 350px;"><%= bbs.getBbsContent() %></textarea></td>
 					</tr>
 				</tbody>
-				</table>
-				<a href="bbs.jsp" class="btn btn-primary">リスト</a>
-				<%
-					if(userID != null && userID.equals(bbs.getUserID())){
-				%>
-					<a href="update.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">修正</a>
-					<a onclick="return confirm('本当に削除しますか？')" href="deleteAction.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">削除</a>
-				<%
-					}
-				%> 
+				</table> 
+			<input type="submit" class="btn btn-primary pull-right" value="修正">
+		</form>
 		</div>
 	</div>
 	

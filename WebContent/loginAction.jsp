@@ -21,7 +21,7 @@
 		if (userID != null) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert = ('ログイン状態です。')");
+			script.println("alert('ログイン状態です。')");
 			script.println("location.href = 'main.jsp'");
 			script.println("</script>");
 		}
