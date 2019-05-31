@@ -1,0 +1,8 @@
+@import url(https://fonts.google.com/specimen/Nanum+Gothic.css);
+@import url(https://fonts.google.com/specimen/Kosugi);
+* {
+	font-family : 'Nanum+Gothic';
+}
+h1 {
+	font-family : 'Kosugi';
+}

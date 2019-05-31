@@ -141,7 +141,7 @@ public class BbsDAO {
 	} catch (Exception e){
 		e.printStackTrace();
 	}
-	return -1;//db오류
+	return -1;//DBエラー
 	}
 
 	public int delete(int bbsID) {
@@ -153,7 +153,7 @@ public class BbsDAO {
 	} catch (Exception e){
 		e.printStackTrace();
 	}
-	return -1;//db오류
+	return -1;//DBエラー
 	}
 }
 
