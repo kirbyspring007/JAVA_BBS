@@ -68,8 +68,7 @@
 		<div class="jumbotron">
 			<h1>ウェブサイト紹介</h1>
 			<p>このウェブサイトは独学で勉強をするために作ったサイトです。</p>
-			<p><a class="btn btn-primary btn-pull" href="#" role="button">자세히알아보기</a></p>
-		</div>
+			</div>
 	</div>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
